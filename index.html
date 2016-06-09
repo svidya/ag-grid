@@ -1,0 +1,58 @@
+<html>
+  <head>
+    <title>Angular 2 QuickStart</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+    <!-- 1. Load libraries -->
+     <!-- Polyfill(s) for older browsers -->
+    <script src="node_modules/core-js/client/shim.min.js"></script>
+    <!--<script src="node_modules/zone.js/dist/zone.js"></script>
+    <script src="node_modules/reflect-metadata/Reflect.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>-->
+
+<!--ag-grid related -->
+
+    <script src="node_modules/es6-shim/es6-shim.min.js"></script>
+    <script src="node_modules/systemjs/dist/system-polyfills.js"></script>
+    <script src="node_modules/angular2-polyfill/bundles/angular2-polyfill.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+    <script src="node_modules/rxjs/bundles/Rx.js"></script>
+    <script src="node_modules/angular2-build/angular2.dev.js"></script>
+    <link href="node_modules/ag-grid/dist/styles/ag-grid.css" rel="stylesheet" />
+    <link href="node_modules/ag-grid/dist/styles/theme-fresh.css" rel="stylesheet" />
+
+    <!-- 2. Configure SystemJS -->
+    <script src="systemjs.config.js"></script>
+    <script>
+      System.config({
+        packages: {        
+          app: {
+            format: 'register',
+            defaultExtension: 'js'
+          },        
+          lib: {
+            format: 'register',
+            defaultExtension: 'js'
+          },
+          'ag-grid-ng2': {
+            defaultExtension: "js"
+          },
+          'ag-grid': {
+            defaultExtension: "js"
+          }
+        },
+        map: {
+            'ag-grid-ng2': 'node_modules/ag-grid-ng2',
+            'ag-grid': 'node_modules/ag-grid'
+        }
+      });
+      System.import('app/main')
+            .then(null, console.error.bind(console));
+    </script>
+  </head>
+  <!-- 3. Display the application -->
+  <body>
+    <my-app>Loading...</my-app>
+  </body>
+</html>
